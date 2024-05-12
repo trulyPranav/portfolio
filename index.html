@@ -43,10 +43,25 @@
     </div>
     <div class="marquee">
         <p>
-            CODE DEVELOP ENGINEER  
+            CODE &#x2022; DEVELOP &#x2022; ENGINEER &#x2022;
         </p>
     </div>
     <div class="statement"><span>SCTCE<sub> 27</sub></span>
     </div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const marqueeText = document.querySelector('.marquee p');
+    marqueeText.setAttribute('data-text', marqueeText.textContent);
+
+    const marqueeContent = marqueeText.textContent;
+    let cloneCount = Math.ceil(window.innerWidth / marqueeText.offsetWidth) + 1;
+    for (let i = 0; i < cloneCount; i++) {
+        const clone = document.createElement('span');
+        clone.textContent = marqueeContent;
+        marqueeText.appendChild(clone);
+    }
+});
+
+</script>
 </body>
 </html>
