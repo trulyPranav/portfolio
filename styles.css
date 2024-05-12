@@ -12,18 +12,11 @@ body {
     background-color: #111;
 }
 
-header {
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: absolute;
-}
-
 header nav {
     max-width: 1600px;
-    margin-top: 1rem ;
     padding: 0;
     display: flex;
+    margin-top: 1rem;
     justify-content: end;
     align-items: center;
 }
@@ -41,6 +34,14 @@ header ul a {
     text-transform: uppercase;
     font-weight: 300;
     font-size: 1.5rem;
+    transform: translateZ(-1) scale(1);
+}
+
+header ul a:hover {
+  font-weight: 600;
+  font-size: 2rem;
+  position: relative;
+  transform: translateZ(1) scale(1);
 }
 
 .dropper {
@@ -55,6 +56,10 @@ header ul a {
     font-weight: bold;
     opacity: 0;
     animation: drop 0.4s linear forwards;
+}
+
+.dropper::after {
+  position: relative;
 }
 
 .dropper span:nth-child(2) {
@@ -140,22 +145,43 @@ header ul a {
 }
 
 .marquee {
-    position: absolute;
+    position: relative;
     display: flex;
     margin-top: 16rem;
     white-space: nowrap;
     overflow: hidden;
     box-sizing: border-box;
-    word-spacing: 55px;
+    word-spacing: 65px;
+    width: 100%;
 }
 .marquee p {
     font-size: 6em;
     color: white;
     font-weight: bold;
     padding-left: 100%;
-    animation: marquee 15s linear infinite;
+    opacity: 1;
+    animation: marquee 15s linear infinite, appear 2s forwards;
+    animation-delay: 3s;
 }
 @keyframes marquee {
     0%   { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
+}
+@keyframes appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.statement {
+  text-decoration: none;
+  color: white;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.statement span sub {
+  font-size: 0.5em;
+  vertical-align: super;
 }
