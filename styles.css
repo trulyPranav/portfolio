@@ -179,16 +179,56 @@ header ul a:hover {
   white-space: nowrap;
 }
 
+@keyframes appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @keyframes marquee {
   0%   { transform: translate(0, 0); }
   100% { transform: translate(-100%, 0); }
 }
 
-@keyframes appear {
-0% { opacity: 0; }
-100% { opacity: 1; }
+.marquee2 {
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  word-spacing: 65px;
+  width: 100%;
+  transition: transform 0.3s;
 }
 
+.marquee2.tilted {
+  transform: perspective(1000px) rotateX(30deg);
+}
+
+.marquee2 p {
+  font-size: 6em;
+  color: white;
+  font-weight: bold;
+  padding-left: 100%;
+  opacity: 1;
+  animation: marquee2 50s linear infinite, appear2 2s forwards;
+  animation-delay: 3s;
+}
+
+.marquee2 p::before,
+.marquee2 p::after {
+  content: attr(data-text);
+  white-space: nowrap;
+}
+
+@keyframes marquee2 {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes appear2 {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 .statement {
   margin-top: 1rem;
