@@ -10,17 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
         marqueeText.appendChild(clone);
     }
 
-    const marquee2Text = document.querySelector('.marquee2 p');
-    marquee2Text.setAttribute('data-text2', marquee2Text.textContent);
-
-    const marquee2Content = marquee2Text.textContent;
-    cloneCount = Math.ceil(window.innerWidth / marquee2Text.offsetWidth) + 1;
-    for (let i = 0; i < cloneCount; i++) {
-        const clone = document.createElement('span');
-        clone.textContent = marquee2Content;
-        marquee2Text.appendChild(clone);
-    }
-
     const connectWithMe = document.getElementById('connect-with-me');
 
     window.addEventListener('scroll', function() {
@@ -37,12 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
             marquee.classList.add('tilted');
         } else {
             marquee.classList.remove('tilted');
-        }
-        const marquee2 = document.querySelector('.marquee2');
-        if (window.scrollY > 50) {
-            marquee2.classList.add('tilted');
-        } else {
-            marquee2.classList.remove('tilted');
-        }        
+        }       
     });
 });

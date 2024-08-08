@@ -13,9 +13,50 @@ body {
     width: 100vw;
 }
 
+.before-parallax {
+  position: fixed;
+}
+
+.after-parallax {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide any overflow */
+  z-index: 1;
+  margin-top: 42em;
+}
+
+.black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.black img {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  object-fit: cover; /* Ensure the image covers the entire area */
+  display: block; /* Remove any extra space below the image */
+}
+
+.spl {
+  position: absolute;
+  z-index: 2;
+  padding-left: 1rem;
+  margin-left: 2rem;
+  justify-items: end;
+}
+
 header nav {
     max-width: 1600px;
     padding: 0;
+    position: relative;
     display: flex;
     margin-top: 1rem;
     justify-content: end;
@@ -160,7 +201,7 @@ header ul a:hover {
 }
 
 .marquee.tilted {
-  transform: perspective(1000px) rotateX(30deg);
+  transform: perspective(1000px) rotateX(5deg);
 }
 
 .marquee p {
@@ -169,8 +210,7 @@ header ul a:hover {
   font-weight: bold;
   padding-left: 100%;
   opacity: 1;
-  animation: marquee 50s linear infinite, appear 2s forwards;
-  animation-delay: 3s;
+  animation: marquee 50s linear infinite, appear 1s forwards;
 }
 
 .marquee p::before,
@@ -189,47 +229,6 @@ header ul a:hover {
   100% { transform: translate(-100%, 0); }
 }
 
-.marquee2 {
-  position: relative;
-  display: flex;
-  white-space: nowrap;
-  overflow: hidden;
-  box-sizing: border-box;
-  word-spacing: 65px;
-  width: 100%;
-  transition: transform 0.3s;
-}
-
-.marquee2.tilted {
-  transform: perspective(1000px) rotateX(30deg);
-}
-
-.marquee2 p {
-  font-size: 6em;
-  color: white;
-  font-weight: bold;
-  padding-left: 100%;
-  opacity: 1;
-  animation: marquee2 50s linear infinite, appear2 2s forwards;
-  animation-delay: 3s;
-}
-
-.marquee2 p::before,
-.marquee2 p::after {
-  content: attr(data-text);
-  white-space: nowrap;
-}
-
-@keyframes marquee2 {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes appear2 {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .statement {
   margin-top: 1rem;
   text-decoration: none;
@@ -239,7 +238,7 @@ header ul a:hover {
   font-weight: 300;
   font-size: 2.5rem;
   opacity: 1;
-  animation: appear 6s forwards;
+  animation: appear 7s forwards;
 }
 
 .statement span sub {
@@ -248,14 +247,16 @@ header ul a:hover {
 }
 
 .connect-with-me {
-  margin-top: 1rem;
+  position: absolute;
+  margin-top: 39rem;
   text-decoration: none;
   color: white;
-  padding: 0 1.5rem;
+  padding: 1.5rem;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 2.5rem;
   transition: opacity 5s;
+  z-index: 3;
 }
 
 .hidden {
