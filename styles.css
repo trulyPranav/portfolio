@@ -1,0 +1,98 @@
+.navigation {
+    width: 100%;
+    height: 100vh;
+    background-color: #0b0b14;
+    position: absolute;
+    top: -100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    /* z-index: 50; */
+}
+
+.change  .navigation {
+    top: 0;
+}
+
+.navigation a {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 5rem;
+    color: #fff;
+    letter-spacing: .3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.change .navigation a:nth-child(1) {
+    transition: all .3s .3s;
+}
+
+.change .navigation a:nth-child(2) {
+    transition: all .3s .4s;
+}
+
+.change .navigation a:nth-child(3) {
+    transition: all .3s .5s;
+}
+
+.change .navigation a:nth-child(4) {
+    transition: all .3s .6s;
+}
+
+.change .navigation a:nth-child(5) {
+    transition: all .3s .7s;
+}
+
+.change .navigation a:nth-child(6) {
+    transition: all .3s .8s;
+}
+
+.change .navigation a {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation a::before {
+    content: "";
+    width: 15rem;
+    height: .5rem;
+    background-color: #dba81b;
+    position: absolute;
+    top: 50%;
+    left: -17rem;
+    transform: translateY(-50%);
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform .3s;
+}
+
+.navigation a:hover::before {
+    transform: scale(1);
+}
+
+.navigation a::after {
+    content: "";
+    width: 15rem;
+    height: .5rem;
+    position: absolute;
+    background-color: #dba81b;
+    top: 50%;
+    right: -17rem;
+    transform: translateY(-50%);
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform .3s;
+}
+
+
+.navigation a:hover::after {
+    transform: scale(1);
+    
+}
+body{
+    background-color: #0b0b14;
+}
