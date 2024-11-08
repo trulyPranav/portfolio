@@ -67,8 +67,8 @@ html {
 
 
 .menu-icon {
-    width: 4rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3.5rem;
     position: absolute;
     top: 50%;
     right: 8rem;
@@ -88,16 +88,17 @@ html {
 }
 
 .change .line-1 {
-    width: 55%;
-    transform: rotateZ(-15deg) translate(-.2rem, .8rem);
+    width: 60%;
+    transform: rotateZ(-35deg) translate(-.6rem, .8rem);
 }
 
 .change .line-3 {
-    width: 55%;
-    transform: rotateZ(15deg) translate(-.2rem, -.8rem);
+    width: 60%;
+    transform: rotateZ(35deg) translate(-.6rem, -.8rem);
 }
 
 .navigation {
+    border: solid 12px white;
     width: 100%;
     height: 100vh;
     background-color: #0b0b14;
@@ -148,6 +149,10 @@ html {
 
 .change .navigation a:nth-child(6) {
     transition: all .3s .8s;
+}
+
+.change .navigation a:nth-child(7) {
+    transition: all .3s .9s;
 }
 
 .change .navigation a {
