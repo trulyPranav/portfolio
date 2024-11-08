@@ -1,72 +1,194 @@
-
-/* Style for the nav bar */
-.navBar {
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-}
-
-.navContent h1 {
-    color: #fff;
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Abel", sans-serif;
+    text-decoration: none;
+    outline: none;
 }
 
-/* Styling for navigation links */
-.navigation {
+html {
+    font-size: 62.5%;
+}
+/* End of Default Styles */
+
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 10rem;
+    background-color: #202020;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
     display: flex;
-    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 8rem;
+    transform: translateY(-50%);
+}
+
+.logo1 {
+    width: 6rem;
+    height: 6rem;
+    border: .4rem solid #dba81b;
+}
+
+.logo2 {
+    width: 5rem;
+    height: 5rem;
+    background-color: #202020;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    /* z-index: 10; */
+}
+
+.logo3 {
+    width: 5rem;
+    height: 5rem;
+    border: .4rem solid #dba81b;
+    background-color: #202020;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    /* z-index: 20; */
+}
+
+.brand span {
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: .3rem;
+    margin: 1.5rem 0 0 3rem;
+}
+
+
+.menu-icon {
+    width: 4rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 50%;
+    right: 8rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.line {
+    width: 4rem;
+    height: .2rem;
+    background-color: #ccc;
+    transition: all .3s;
+}
+
+.change .line-1 {
+    width: 55%;
+    transform: rotateZ(-15deg) translate(-.2rem, .8rem);
+}
+
+.change .line-3 {
+    width: 55%;
+    transform: rotateZ(15deg) translate(-.2rem, -.8rem);
+}
+
+.navigation {
+    width: 100%;
+    height: 100vh;
+    background-color: #0b0b14;
+    position: absolute;
+    top: -100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    /* z-index: 50; */
+}
+
+.change  .navigation {
+    top: 0;
 }
 
 .navigation a {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 5rem;
     color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background 0.3s;
+    letter-spacing: .3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.navigation a:hover {
-    background-color: #555;
+.change .navigation a:nth-child(1) {
+    transition: all .3s .3s;
 }
 
-/* Hamburger icon styling */
-.menuIcon {
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-    display: none;
+.change .navigation a:nth-child(2) {
+    transition: all .3s .4s;
 }
 
-/* Hide checkbox */
-.menuToggle {
-    display: none;
+.change .navigation a:nth-child(3) {
+    transition: all .3s .5s;
 }
 
-/* Responsive menu toggle using checkbox hack */
-@media (max-width: 768px) {
-    /* Hamburger icon visible on small screens */
-    .menuIcon {
-        display: block;
-    }
-    
-    /* Hide the navigation links by default on small screens */
-    .navigation {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        background-color: #333;
-        padding: 10px;
-        border-radius: 5px;
-        width: 150px;
-    }
-
-    /* Show the navigation when the checkbox is checked */
-    .menuToggle:checked + .menuIcon + .navigation {
-        display: flex;
-    }
+.change .navigation a:nth-child(4) {
+    transition: all .3s .6s;
 }
+
+.change .navigation a:nth-child(5) {
+    transition: all .3s .7s;
+}
+
+.change .navigation a:nth-child(6) {
+    transition: all .3s .8s;
+}
+
+.change .navigation a {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation a::before {
+    content: "";
+    width: 15rem;
+    height: .5rem;
+    background-color: #dba81b;
+    position: absolute;
+    top: 50%;
+    left: -17rem;
+    transform: translateY(-50%);
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform .3s;
+}
+
+.navigation a:hover::before {
+    transform: scale(1);
+}
+
+.navigation a::after {
+    content: "";
+    width: 15rem;
+    height: .5rem;
+    position: absolute;
+    background-color: #dba81b;
+    top: 50%;
+    right: -17rem;
+    transform: translateY(-50%);
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform .3s;
+}
+
+
+.navigation a:hover::after {
+    transform: scale(1);
+}
+/* End of Navbar */
