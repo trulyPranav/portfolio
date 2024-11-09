@@ -5,6 +5,7 @@
     font-family: "Abel", sans-serif;
     text-decoration: none;
     outline: none;
+    background-color: #111;
 }
 
 html {
@@ -15,7 +16,7 @@ html {
 .navbar {
     width: 100%;
     height: 10rem;
-    background-color: #202020;
+    background-color: #001;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -24,6 +25,7 @@ html {
 .brand {
     display: flex;
     position: absolute;
+    background-color: transparent;
     top: 50%;
     left: 8rem;
     transform: translateY(-50%);
@@ -59,6 +61,7 @@ html {
 .brand span {
     font-size: 3rem;
     color: #fff;
+    background-color: transparent;
     letter-spacing: .3rem;
     margin: 1.5rem 0 0 3rem;
 }
@@ -68,6 +71,7 @@ html {
     width: 3rem;
     height: 3.5rem;
     position: absolute;
+    background-color: #001;
     top: 50%;
     right: 8rem;
     transform: translateY(-50%);
@@ -116,6 +120,7 @@ html {
 
 .navigation a {
     font-family: 'Alfa Slab One', cursive;
+    background-color: #0b0b14;
     font-size: 5rem;
     color: #fff;
     letter-spacing: .3rem;
@@ -195,3 +200,119 @@ html {
     transform: scale(1);
 }
 /* End of Navbar */
+
+.mainDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10rem;
+}
+
+.md1 {
+}
+
+.md2 {
+    background-color: blue;
+    /* padding: 300px; */
+}
+
+.dropper {
+    position: absolute;
+    display: flex;
+    margin-top: 5rem;
+    margin-left: 1.5rem;
+}
+
+.dropper span {
+    font-size: 6em;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    animation: drop 0.4s linear forwards;
+}
+
+.dropper::after {
+  position: relative;
+}
+
+.dropper span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+.dropper span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+.dropper span:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  
+.dropper span:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  
+.dropper span:nth-child(6) {
+    animation-delay: 1s;
+  }
+  
+.dropper span:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+  
+.dropper span:nth-child(8) {
+    animation-delay: 1.4s;
+  }
+  
+.dropper span:nth-child(9) {
+    animation-delay: 1.6s;
+  }
+  
+.dropper span:nth-child(10) {
+    animation-delay: 1s;
+  }
+  .dropper span:nth-child(11) {
+    animation-delay: 1.2s;
+  }
+  
+.dropper span:nth-child(12) {
+    animation-delay: 1.4s;
+  }
+  
+.dropper span:nth-child(13) {
+    animation-delay: 1.6s;
+  }
+  
+.dropper span:nth-child(14) {
+    animation-delay: 1.2s;
+  } 
+
+.dropper span:nth-child(15) {
+    animation-delay: 1.6s;
+  } 
+  
+.dropper span:nth-child(16) {
+    animation-delay: 1.9s;
+  } 
+  
+@keyframes  drop {
+0% {
+    transform: translateY(-200px) scaleY(0.9);
+}
+5% {
+    opacity: 0.7;
+}
+50% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+}
+65% {
+    transform: translateY(-17px) scaleY(0.9);
+}
+75% {
+    transform: translateY(-22px) scaleY(0.9);
+}
+100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+}
+}
