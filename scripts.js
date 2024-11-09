@@ -5,7 +5,7 @@ menuIcon.addEventListener("click", () => {
     navbar.classList.toggle("change")
 })
 
-const mainTextDisplayContents = ["Flutter", "Web", ".NET"];
+const mainTextDisplayContents = ["Flutter", "Web", "Python", ".NET"];
 let currIndex = 0;
 
 function typeWord(word, element, callback) {

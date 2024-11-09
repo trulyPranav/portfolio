@@ -119,8 +119,9 @@ html {
 }
 
 .navigation a {
-    font-family: 'Alfa Slab One', cursive;
+    /* font-family: 'Alfa Slab One', cursive; */
     background-color: #0b0b14;
+    font-weight: bold;
     font-size: 5rem;
     color: #fff;
     letter-spacing: .3rem;
