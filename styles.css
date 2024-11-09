@@ -318,7 +318,7 @@ html {
 }
 
 .md1-content {
-    margin-top: 5rem;
+    margin-top: 8rem;
     margin-left: 1.5rem;
     color: white;
     font-size: 6em;
@@ -327,22 +327,13 @@ html {
 
 .main-display-text-change {
     /* white-space: nowrap; */
-    overflow: hidden;
+    /* overflow: hidden; */
     display: inline-block;
-    padding-right: 3px;
+    padding-right: 0;
     transition: width 1s ease-in-out;
     border-right: 2px solid white;
-    width: 1;
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }    
-}
 
 @keyframes blink {
     50% {
@@ -352,5 +343,5 @@ html {
 
 .typing-animation {
     display: inline-block;
-    animation: typing 2s steps(30) 1s forwards, blink 0.75s step-end infinite;
+    animation: blink 0.75s step-end infinite;
 }
