@@ -53,3 +53,14 @@ function displayWords() {
 }
 
 displayWords();
+
+const images = document.querySelectorAll('.image-item');
+let imageIndex = 0;
+
+function changeImage() {
+    images.forEach(img => img.classList.remove('active'));
+    images[imageIndex].classList.add('active');
+    imageIndex = (imageIndex + 1) % images.length;
+}
+setInterval(changeImage, 1750*2);
+changeImage();
