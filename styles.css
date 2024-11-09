@@ -71,7 +71,7 @@ html {
     width: 3rem;
     height: 3.5rem;
     position: absolute;
-    background-color: #001;
+    background-color: transparent;
     top: 50%;
     right: 8rem;
     transform: translateY(-50%);
@@ -217,7 +217,7 @@ html {
 }
 
 .dropper {
-    position: absolute;
+    position: relative;
     display: flex;
     margin-top: 5rem;
     margin-left: 1.5rem;
@@ -315,4 +315,42 @@ html {
     transform: translateY(0px) scaleY(1);
     opacity: 1;
 }
+}
+
+.md1-content {
+    margin-top: 5rem;
+    margin-left: 1.5rem;
+    color: white;
+    font-size: 6em;
+    font-weight: bold;
+}
+
+.main-display-text-change {
+    /* white-space: nowrap; */
+    overflow: hidden;
+    display: inline-block;
+    padding-right: 3px;
+    transition: width 1s ease-in-out;
+    border-right: 2px solid white;
+    width: 1;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }    
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typing-animation {
+    display: inline-block;
+    animation: typing 2s steps(30) 1s forwards, blink 0.75s step-end infinite;
 }
