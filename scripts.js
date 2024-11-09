@@ -64,3 +64,19 @@ function changeImage() {
 }
 setInterval(changeImage, 1750*2);
 changeImage();
+
+window.addEventListener('scroll', function() {
+    const logo = document.querySelector('.logo');
+    const scrollPosition = window.scrollY;
+    const md1 = document.querySelector(".mainDisplay");
+
+    if (scrollPosition > 300) {
+        logo.classList.add('logo-fixed');
+        md1.classList.add('opace');
+        md1.classList.remove('opaceAgain');
+    } else {
+        logo.classList.remove('logo-fixed');
+        // md1.classList.remove('opace');
+        md1.classList.add('opaceAgain');
+    }
+});

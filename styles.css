@@ -24,17 +24,18 @@ html {
     z-index: 100;
 }
 
-.am {
+/* Logo Styling */
+.logo {
     font-family: "Black Ops One", system-ui;
-    width:45px;
-    height:45px;
-    border-radius: 50%;
+    width: 57px;
+    height: 45px;
+    border-radius: 20%;
     border-style: solid;
     margin-top: 2rem;
     margin-left: 2rem;
     margin-right: 3rem;
     margin-bottom: 9px;
-    border:2px solid white ;
+    border: 2px solid white;
     background-color: transparent;
     font-weight: 700;
     color: #001;
@@ -42,6 +43,15 @@ html {
     padding: 5px 5px;
     background-color: white;
     letter-spacing: 1px;
+    transition: transform 1s ease;
+}
+
+.logo-fixed {
+    position: fixed;
+    margin-top: 2rem;
+    left: 50%;
+    transform: translate(-50%, 2rem) rotate(360deg);
+    z-index: 1000;
 }
 
 .brand {
@@ -59,7 +69,7 @@ html {
     font-family: "Black Ops One", system-ui;
     background-color: transparent;
     letter-spacing: .3rem;
-    margin: 1rem 0 0 6rem;
+    margin: 1rem 0 0 6.5rem;
 }
 
 sup {
@@ -323,6 +333,37 @@ sup {
     animation: slideIn 1s ease-out;
     display: block;
 }
+
+
+.opace {
+    animation: poyi 1s ease-in-out;
+    opacity: 0;
+}
+
+.opaceAgain {
+    animation: fadeInUp 2s ease-in-out;
+    animation: slideIn 1s ease-out;
+    opacity: 1;
+}
+
+@keyframes keri {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes poyi {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 @keyframes slideIn {
     from {
         transform: translateY(50px);
@@ -333,6 +374,7 @@ sup {
         opacity: 1;
     }
 }
+
 .main-display-text-change {
     /* white-space: nowrap; */
     /* overflow: hidden; */
