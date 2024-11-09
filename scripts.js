@@ -8,7 +8,7 @@ menuIcon.addEventListener("click", () => {
 const mainTextDisplayContents = ["Flutter", "Web", ".NET"];
 let currIndex = 0;
 
-function typeWord(word, element) {
+function typeWord(word, element, callback) {
     let charIndex = 0;
     element.innerHTML = '';
     element.style.borderRight = "2px solid white";
@@ -17,27 +17,39 @@ function typeWord(word, element) {
         charIndex++;
         if (charIndex === word.length) {
             clearInterval(typingInterval);
+            callback();
         }
     }, 150);
+}
+
+function deleteWord(element, word, callback) {
+    let charIndex = word.length - 1;
+    let deletingInterval = setInterval(() => {
+        element.innerHTML = word.slice(0, charIndex);
+        charIndex--;
+        if (charIndex < 0) {
+            clearInterval(deletingInterval);
+            callback();
+        }
+    }, 100);
 }
 
 function displayWords() {
     const wordElem = document.querySelector(".main-display-text-change");
     const currentWord = mainTextDisplayContents[currIndex];
-    typeWord(currentWord, wordElem);
-    wordElem.classList.add("typing-animation");
-    currIndex++;
-    if (currIndex === mainTextDisplayContents.length)
-        currIndex = 0;
-    setTimeout(() => {
-        // wordElem.style.borderRight = "none";
-
-        setTimeout(() => {
-            wordElem.style.borderRight = "2px solid white";
-            displayWords();
-        }, 500);
-    }, currentWord.length * 150 + 2000);
     
+    wordElem.classList.add("typing-animation");
+    typeWord(currentWord, wordElem, () => {
+        setTimeout(() => {
+            deleteWord(wordElem, currentWord, () => {
+                currIndex++;
+                if (currIndex === mainTextDisplayContents.length) {
+                    currIndex = 0;
+                }
+                setTimeout(displayWords, 500);
+            });
+        }, 1000);
+    });
 }
 
 displayWords();
