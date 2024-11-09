@@ -322,6 +322,7 @@ html {
     background: url('background.jpg') no-repeat center center/cover;
     animation: fadeInUp 2s ease-in-out;
     animation: slideIn 1s ease-out;
+    display: block;
 }
 @keyframes slideIn {
     from {
@@ -352,6 +353,18 @@ html {
 .typing-animation {
     display: inline-block;
     animation: blink 0.75s step-end infinite;
+}
+.mec{
+    font-size: 6em;
+    font-weight: bold;
+    color: white;
+    margin-top: 8rem;
+    margin-left: 1.5rem;
+    animation: fadeInUp 2s ease-in-out;
+    animation: slideIn 1s ease-out;
+    align-items: center;
+    justify-content: space-between;
+    
 }
 
 .md2 {
