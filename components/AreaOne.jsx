@@ -17,7 +17,7 @@ export default function Area1() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentGreeting((prev) => (prev + 1) % greetings.length);
-    }, 4000); // Change greeting every 3 seconds
+    }, 3000); // Change greeting every 3 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, []);
